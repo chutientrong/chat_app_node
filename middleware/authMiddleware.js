@@ -16,7 +16,7 @@ const protect = asyncHandler(async (req, res, next) => {
 			token = token.replace(/^Bearer\s+/, ""); //Vì chuẩn W3C của token sẽ có prefix phía trước Bearer nên phải thay thế Bearer
 			const decode = jwt.verify(
 				token,
-				process.env.JWT_KEY,
+				`${process.env.JWT_KEY}`,
 				(err, resultToken) => {
 					if (err) {
 						return res.status(403).send({ message: "Token Is Not Valid" });
