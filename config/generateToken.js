@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-import * as dotenv from 'dotenv';
+const dotenv = require("dotenv");
 dotenv.config();
 
 const generateToken = (id) => {
